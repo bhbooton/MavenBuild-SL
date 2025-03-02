@@ -25,6 +25,7 @@ jobs:
         port: 22
         connect_timeout: 10s
         first_ssh: |
+          sudo chmod 777 /var/lib/tomcat9/webapps
           curl -l -u admin:Root123$ http://localhost:8080/job/BensGithubaction_trigger/build?token=token1
         scp: |
           './target/*war' => /var/lib/tomcat9/webapps
